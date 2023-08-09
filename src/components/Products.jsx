@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import useProducts from '../hooks/use-products';
+import React, { useState } from "react";
+import useProducts from "../hooks/use-products";
 
 export default function Products() {
   const [checked, setChecked] = useState(false);
@@ -13,7 +13,7 @@ export default function Products() {
   return (
     <>
       <label>
-        <input type='checkbox' checked={checked} onChange={handleChange} />
+        <input type="checkbox" checked={checked} onChange={handleChange} />
         Show Only 🔥 Sale
       </label>
       <ul>
