@@ -8,7 +8,7 @@ export default function Products() {
     error,
     data: products,
   } = useQuery(
-    ["[products", checked],
+    ["products", checked],
     async () => {
       console.log("fetching..");
       return fetch(`data/${checked ? "sale_" : ""}products.json`).then((res) =>
@@ -27,10 +27,13 @@ export default function Products() {
 
   return (
     <>
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
-        Show Only 🔥 Sale
-      </label>
+      <input
+        id="checkbox"
+        type="checkbox"
+        checked={checked}
+        onChange={handleChange}
+      />
+      <label htmlFor="checkbox">Show Only 🔥 Sale</label>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
